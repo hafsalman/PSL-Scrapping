@@ -8,7 +8,7 @@ import json
 import time
 import os
 
-CATEGORY_URL = "https://psl.org.pk/dictionary/76-automobile"
+CATEGORY_URL = "https://psl.org.pk/dictionary/2-adverbs"
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
@@ -22,12 +22,12 @@ driver = webdriver.Chrome(
 print("Saving JSON to:", os.getcwd())
 
 driver.get(CATEGORY_URL)
-time.sleep(5)
+time.sleep(1)
 
 results = []
 
 cards = driver.find_elements(
-    By.XPATH, "//a[contains(@href, '/dictionary/76-automobile/')]"
+    By.XPATH, "//a[contains(@href, '/dictionary/2-adverbs/')]"
 )
 
 card_links = list(set(c.get_attribute("href") for c in cards))
@@ -63,7 +63,7 @@ for i, link in enumerate(card_links, start=1):
     driver.back()
     time.sleep(2)
 
-with open("education.json", "w", encoding="utf-8") as f:
+with open("name.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 driver.quit()
