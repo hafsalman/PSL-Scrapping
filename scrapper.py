@@ -22,7 +22,7 @@ driver = webdriver.Chrome(
 print("Saving JSON to:", os.getcwd())
 
 driver.get(CATEGORY_URL)
-time.sleep(1)
+time.sleep(5)
 
 results = []
 
