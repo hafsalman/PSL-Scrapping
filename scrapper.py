@@ -8,7 +8,7 @@ import json
 import time
 import os
 
-CATEGORY_URL = "https://psl.org.pk/dictionary/2-adverbs"
+CATEGORY_URL = "https://psl.org.pk/dictionary/27-colors"
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
@@ -27,7 +27,7 @@ time.sleep(1)
 results = []
 
 cards = driver.find_elements(
-    By.XPATH, "//a[contains(@href, '/dictionary/2-adverbs/')]"
+    By.XPATH, "//a[contains(@href, '/dictionary/27-colors/')]"
 )
 
 card_links = list(set(c.get_attribute("href") for c in cards))
